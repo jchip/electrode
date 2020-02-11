@@ -15,7 +15,7 @@ const archetype = {
 module.exports = archetype;
 
 function checkTopDevArchetype() {
-  const devArchName = "electrode-archetype-webpack-dll-dev";
+  const devArchName = "@xarc/dll-dev";
   const topPkg = require(Path.resolve("package.json"));
   // in case this is being used for test/dev in the -dev archetype
   if (topPkg.name === devArchName) {

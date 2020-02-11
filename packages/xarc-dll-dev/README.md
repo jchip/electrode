@@ -1,12 +1,10 @@
-# Electrode Webpack DLL Archetype
+# Electrode Webpack DLL As Module Development Support
 
-Electrode Webpack DLL Archetype
+## Purpose
 
-# Purpose
+This module helps with creating a [npm] module that releases JavaScript [webpack] DLLs.
 
-This archetype helps with creating a [npm] module that releases JavaScript [webpack] DLLs.
-
-The DLL package then can be consumed by an Electrode application based on the Electrode app archetype.
+The DLL package then can be consumed by an Electrode application.
 
 Other common DLL consumption support:
 
@@ -15,7 +13,7 @@ Other common DLL consumption support:
 - In production mode, Electrode will auto load the DLL JS bundle from your CDN server.
 - If module packed into the DLL has different version than what's installed in your `node_modules`, Electrode app archetype warn you.
 
-# Creating Your DLL module
+## Creating Your DLL module
 
 Steps to create a module for publishing DLLs:
 
@@ -23,8 +21,8 @@ Steps to create a module for publishing DLLs:
 $ mkdir my-react-dll
 $ cd my-react-dll
 $ npm init --yes
-$ npm install --save react react-dom electrode-archetype-webpack-dll
-$ npm install --save-dev electrode-archetype-webpack-dll-dev
+$ npm install --save react react-dom
+$ npm install --save-dev @xarc/dll-dev
 ```
 
 Then add these files:
@@ -32,7 +30,7 @@ Then add these files:
 `xclap.js`:
 
 ```js
-require("electrode-archetype-webpack-dll")();
+require("@xarc/dll-dev")();
 ```
 
 `index.js`:

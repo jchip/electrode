@@ -5,15 +5,11 @@ const Path = require("path");
 const Fs = require("fs");
 const archetype = require("./config/archetype");
 
-assert(!archetype.noDev, "dev archetype is missing - development & build tasks not possible");
-
-const devRequire = archetype.devRequire;
-
-const _ = devRequire("lodash");
-const xsh = devRequire("xsh");
-const mkdirp = devRequire("mkdirp");
-const requireAt = devRequire("require-at");
-const { saveModuleVersions } = devRequire("./lib/save-module-versions");
+const _ = require("lodash");
+const xsh = require("xsh");
+const mkdirp = require("mkdirp");
+const requireAt = require("require-at");
+const { saveModuleVersions } = require("./lib/save-module-versions");
 
 const config = archetype.config;
 const shell = xsh.$;

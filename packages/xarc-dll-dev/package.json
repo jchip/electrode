@@ -1,8 +1,8 @@
 {
-  "name": "electrode-archetype-webpack-dll-dev",
+  "name": "@xarc/dll-dev",
   "version": "2.0.1",
-  "description": "Electrode Archetype to build webpack DLLs",
-  "main": "index.js",
+  "description": "Electrode X webpack DLLs development support",
+  "main": "arch-clap-tasks.js",
   "scripts": {
     "test": "echo $npm_config_cache"
   },
@@ -10,7 +10,8 @@
   "files": [
     "config",
     "lib",
-    "require.js"
+    "require.js",
+    "arch-clap-tasks.js"
   ],
   "author": "Joel Chen <xchen@walmartlabs.com>",
   "license": "Apache-2.0",
@@ -32,7 +33,7 @@
     "electrode-archetype-njs-module-dev": "^3.0.0"
   },
   "peerDependencies": {
-    "electrode-archetype-webpack-dll": "1.1.0"
+    "@xarc/dll": "1.1.0"
   },
   "nyc": {
     "all": true,

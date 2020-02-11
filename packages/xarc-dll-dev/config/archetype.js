@@ -12,9 +12,6 @@ const configDir = `${devDir}/config`;
 // const configDir = `${devDir}/config`;
 
 const archetype = {
-  devDir,
-  devPkg,
-  devRequire,
   config: Object.assign(
     {},
     {
