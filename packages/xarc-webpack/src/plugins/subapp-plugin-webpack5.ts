@@ -196,7 +196,7 @@ export class SubAppWebpackPlugin {
     this._makeIdentifierBEE = makeIdentifierBEE;
     this._tapAssets = tapAssets;
     this._assetsFile = assetsFile;
-    this._hasHmr = hasHmr;
+    this._hasHmr = () => false; // hasHmr;
     this._foundSubApps = "";
   }
 
@@ -386,7 +386,7 @@ export class SubAppWebpackPlugin {
             module: mod
           };
 
-          if (this._hasHmr(parser.state.compilation)) {
+          if (false && this._hasHmr(parser.state.compilation)) {
             const dep = new SubAppHotAcceptDependency(
               mod,
               parser.state.module,

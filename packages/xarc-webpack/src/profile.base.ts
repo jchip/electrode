@@ -7,7 +7,6 @@ const profile = {
     _output: { order: 300 },
     _resolve: { order: 400 },
     "_resolve-loader": { order: 500 },
-    _subapp2: { order: 600 },
     //
     _babel: { order: 2000 },
     "_extract-style": { order: 2100 },
@@ -16,9 +15,10 @@ const profile = {
     _stats: { order: 2400 },
     _isomorphic: { order: 2500 },
     _pwa: { order: 2600 },
-    // ensure this is after _dev (development profile) and _output
-    // because it needs to modify output.publicPath to "auto"
+    // ensure _subapp2 and _subapp-chunks are after _dev (development profile)
+    // and _output because they need to modify output.publicPath to "auto"
     // for remote entry to work
+    _subapp2: { order: 19000 },
     "_subapp-chunks": { order: 19000 },
     "_dll-load": { order: 20000 },
     _node: { order: 30000 }

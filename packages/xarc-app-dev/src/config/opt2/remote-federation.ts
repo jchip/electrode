@@ -42,14 +42,6 @@ export type RemoteSubAppOptions = {
    *
    */
   filename?: string;
-  /**
-   * Name of the subapps to expose
-   *
-   * Each subapp will be exposed remotely and available as `'./Name'`
-   * - For example, the subapp `'Deal'` would be exposed as a module `'./Deal'`
-   *
-   */
-  subAppsToExpose?: string[];
 
   /**
    * Directly specify `exposes` config according to webpack5 ModuleFederationPlugin options.
@@ -67,4 +59,33 @@ export type RemoteSubAppOptions = {
    *
    */
   shared?: Record<string, ModuleShareOptions>;
+};
+
+/**
+ * remote options for subappV1
+ */
+export type V1RemoteSubAppOptions = RemoteSubAppOptions & {
+  /**
+   * Name of the subapps to expose
+   *
+   * Each subapp will be exposed remotely and available as `'./Name'`
+   * - For example, the subapp `'Deal'` would be exposed as a module `'./Deal'`
+   *
+   */
+  subAppsToExpose?: string[];
+};
+
+export type V2SubAppExposeOptions = {};
+
+/**
+ * remote options for subappV1
+ */
+export type V2RemoteSubAppOptions = RemoteSubAppOptions & {
+  /**
+   * declare the entry of v2 subapps to expose
+   * - key will be the name of the subapp
+   * - value should be the path to module the export the subapp, relative to `src`
+   *
+   */
+  subAppsToExpose?: Record<string, string>;
 };

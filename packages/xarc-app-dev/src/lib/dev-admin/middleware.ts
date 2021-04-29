@@ -121,11 +121,11 @@ export class Middleware {
     const encodeHmrPath = encodeURIComponent(webpackHotOptions.path);
 
     // webpack 5 entry config: https://webpack.js.org/concepts/entry-points/
-    injectEntry(config, [`webpack-hot-middleware/client?path=${encodeHmrPath}`]);
-    console.log("Webpack config entry updated with HMR client");
+    // injectEntry(config, [`webpack-hot-middleware/client?path=${encodeHmrPath}`]);
+    // console.log("Webpack config entry updated with HMR client", encodeHmrPath);
 
     config.plugins = [
-      new webpack.HotModuleReplacementPlugin(),
+      // new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       options.progress !== false && new webpack.ProgressPlugin({ profile: options.progressProfile })
     ]

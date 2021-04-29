@@ -1,6 +1,6 @@
 // webpack config collected from env-webpack.ts
 
-import { RemoteSubAppOptions } from "./remote-federation";
+import { V1RemoteSubAppOptions, V2RemoteSubAppOptions } from "./remote-federation";
 
 /**
  * Options for CDN server.
@@ -235,11 +235,20 @@ export type WebpackOptions = {
    * ModuleFederationPlugin.  See docs at https://webpack.js.org/concepts/module-federation/
    *
    * TODO: Exposing SubApps remotely has these limitations:
-   * 1. `publicPath` must be `"auto"` to expose subapps remotely.
-   * 2. Due to 1, cannot use CDN for assets.
-   * 3. Cannot use `"single"` shared webpack `runtimeChunk` optimization.
+   * 1. Cannot use `"single"` shared webpack `runtimeChunk` optimization.
    *
    * @remark this is only for subappV1
    */
-  v1RemoteSubApps?: RemoteSubAppOptions;
+  v1RemoteSubApps?: V1RemoteSubAppOptions;
+
+  /**
+   * Specify Module Federation options to expose or consume remote V2 subapps through webpack5's
+   * ModuleFederationPlugin.  See docs at https://webpack.js.org/concepts/module-federation/
+   *
+   * TODO: Exposing SubApps remotely has these limitations:
+   * 1. Cannot use `"single"` shared webpack `runtimeChunk` optimization.
+   *
+   * @remark this is only for subappV2
+   */
+  v2RemoteSubApps?: V2RemoteSubAppOptions;
 };
